@@ -1,0 +1,37 @@
+
+{% extends "FoodApp/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  
+    />
+</head>
+<body>
+    {% block body %}
+    {% for item in item_list %}
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4"><img src="{{ item.item_image }}" height="190px" width="280px" class="card"></div>
+    <br><br><br>
+    <div class="col-md-3"><h3 style="font-family:cursive;font-weight:bold">{{ item.item_name }}</h3></div>
+    <br>
+    <div class="col-md-3"><a href="{% url 'FoodApp:detail' item.id %}" class="btn btn-success" style="background-color:black;">Details</a></div>
+    </div>
+    <br><hr><br>
+    {% endfor %}
+    {% endblock %} 
+</body>
+</html>  
+
+
+
+        
+ 
+     
+           
+     
