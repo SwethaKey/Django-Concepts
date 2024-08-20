@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        /* Main title */
+        h1 {
+            color: #007bff; /* Blue color */
+        }
+        /* List Styles */
+        ul {
+            list-style-type: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 20px 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        /* Button styles */
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue Color */
+            color: #fff; /* White text */
+            border: none; 
+            cursor: pointer;
+            transition: background-color 0,3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Item List</h1>
+      <ul>
+            {% for item in item_list %}
+            <li>
+                <p>{{ item.item_name }}</p>
+                <a href='{% url 'FoodApp:detail' item.id %}' class="btn">Details</a>
+            </li>
+           {% endfor %}  
+      </ul>
+</body>
+</html>
